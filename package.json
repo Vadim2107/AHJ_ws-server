@@ -1,0 +1,42 @@
+{
+  "name": "ahj_ws-server",
+  "version": "1.0.0",
+  "description": "ahj_ws-server",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vadim2107/AHJ_ws-server.git"
+  },
+  "keywords": [
+    "ahj_ws-server"
+  ],
+  "author": "VaZiAn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vadim2107/AHJ_ws-server/issues"
+  },
+  "homepage": "https://github.com/Vadim2107/AHJ_ws-server#readme",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "http-event-stream": "^0.2.0",
+    "koa": "^2.13.3",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "path": "^0.12.7",
+    "uuid": "^8.3.2",
+    "ws": "^8.2.3"
+  },
+  "devDependencies": {
+    "forever": "^4.0.1"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
