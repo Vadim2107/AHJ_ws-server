@@ -21,11 +21,9 @@ class User {
                     }else{
                         resolve()
                     }
-
                 }
             )
         })
-
     }
 
     toJSON() {
@@ -53,7 +51,8 @@ class User {
 
     static async getByName(name) {
         const users = await User.getAll();
-        return users.find(elem => elem.name.toLowerCase() === name.toLowerCase())
+        // return users.find(elem => elem.name.toLowerCase() === name.toLowerCase())
+        return users.find(elem => elem.name === name);
     }
 
     static async deleteUser(name){

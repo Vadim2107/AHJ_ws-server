@@ -18,10 +18,6 @@ app.use(koaBody({
     json: true,
 }));
 
-// router.get('/index', async (ctx) => {
-//     ctx.response.body = 'hello';
-// });
-
 router.get('/index', async (ctx) => {
     ctx.response.body = 'It work';
 });
@@ -33,7 +29,7 @@ let delUser;
 
 wsServer.on('connection', (ws, req) => {
     ws.on('message', async (msg) => {
-        console.log('msg');
+
         const message = JSON.parse(msg);
 
         if(message.type === 'addUser') {
@@ -87,16 +83,16 @@ wsServer.on('connection', (ws, req) => {
 });
 
 app.use(router.routes()).use(router.allowedMethods());
-// server.listen(port);
-app.use(async (ctx) => {
-    console.log(ctx.request);
-    ctx.response.body = 'It work!!!';
-});
+server.listen(port);
+// app.use(async (ctx) => {
+//     console.log(ctx.request);
+//     ctx.response.body = 'It work!!!';
+// });
 
-server.listen(port, (err) => {
-    if (err) {
-        console.log('Error occured:', error);
-        return;
-    }
-    console.log(`server is listening on ${port} port`);
-});
+// server.listen(port, (err) => {
+//     if (err) {
+//         console.log('Error occured:', error);
+//         return;
+//     }
+//     console.log(`server is listening on ${port} port`);
+// });
